@@ -5,7 +5,7 @@ import artifact from "../../../artifacts/root.json"
 
 const provider = new DefaultProvider({ network: bsv.Networks.mainnet });
 const signer = new NeucronSigner(provider);
-await signer.login("sales@timechainlabs.io", "string");
+await signer.login("shubhamwebthree@gmail.com", "Shubham@1234");
 await Root.loadArtifact(artifact);
 let instance: any;
 
@@ -23,9 +23,9 @@ export const actions = {
         "smart lock deployed : https://whatsonchain.com/tx/" + deployTx.id
       );
 
-      return { success: true, txid: deployTx.id };
+      return { deployed: true, txid: deployTx.id };
     } catch (error:any) {
-      return { success: false, txid: error.message };
+      return { deployed: false, txid: error.message };
     }
   },
 
